@@ -1,12 +1,12 @@
 body {
 	position: relative;
 	margin: 0 auto;
-	text-align: center;
   }
   article{
 	width: 100vw;
 	height: 100vh;
 	background-color: aliceblue;
+	text-align: center;
   }
   .search {
 	position: relative;
@@ -94,15 +94,6 @@ body {
 	  transition-delay: 0.2s;
   }
 
-
-  .one{
-	right: 0px;
-	font-size: 800px;
-	position: absolute;
-	z-index: -1;
-	color: #585d6b;
-	margin-top: 0 px;
-  }
 .searched{
 	margin-top: 25vh;
 }
