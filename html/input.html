@@ -5,6 +5,13 @@
     <title>Ку ку</title>
     <link rel="stylesheet" href="../stile/styles.css">
     <link rel="stylesheet" type="text/css" href="../stile/input.css">
+    <style>
+        /* Скрываем оба элемента span по умолчанию */
+        #correctOutput,
+        #incorrectOutput {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <!-- menu -->
@@ -17,14 +24,43 @@
             <li><a href="../html/candle.html">Свечи</a></li>
         </ul>
     </nav>
-    <h1 class="one" style="margin-top: 0px;">5</h1>
+    <h1 class="one" style="margin-top: 200px; font-size:250px;" >x2</h1>
     <!-- main article -->
     <article>
         <div class="searched">
-        <input type="text" class="input-search" id="input-search"/>
+        <input type="text" class="input-search" id="inputField"/>
         <label class="search" for="input-search">
         </label>
+        <span id="correctOutput" style="font-size: 100px;">Ура победа!!!</span>
+        <span id="incorrectOutput"><h4 style="font-size: 50px;">Не попал</h4>
+            <p style="text-align: center; font-size: 25px;">Эчпочмак – это такой треугольный пирожок, который делают татары и башкиры. <br>
+            Внутри у него мясо, картошка и лук. <br>
+            Очень вкусно получается, особенно если горячий.</p></span>
     </div>
     </article>
+
+    <script>
+        // Получаем элементы DOM
+        const inputField = document.getElementById('inputField');
+        const correctOutput = document.getElementById('correctOutput');
+        const incorrectOutput = document.getElementById('incorrectOutput');
+        
+        // Функция проверки значения
+        function checkInput() {
+            if (inputField.value === '44083740') { // Правильное число
+                correctOutput.style.display = 'block';
+                incorrectOutput.style.display = 'none';
+            } else if (inputField.value === 'Эчпочмак') { // Неправильное число
+                incorrectOutput.style.display = 'block';
+                correctOutput.style.display = 'none';
+            } else { // Любое другое число
+                correctOutput.style.display = 'none';
+                incorrectOutput.style.display = 'none';
+            }
+        }
+        
+        // Добавляем обработчик события изменения значения поля ввода
+        inputField.addEventListener('input', checkInput);
+    </script>
 </body>
 </html>

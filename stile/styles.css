@@ -130,7 +130,7 @@ nav:hover ~ article:after
 
 .one{
 	right: 0px;
-	font-size: 35vw;
+	font-size: 30vw;
 	position: absolute;
 	z-index: -1;
 	color: #585d6b;
